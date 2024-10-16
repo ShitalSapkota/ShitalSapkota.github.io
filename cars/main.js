@@ -3,7 +3,7 @@
 
 const form = document.querySelector('#car');
 const searchCar = document.querySelector('#searchCar');
-//const all_plate_num = [];
+
 /* Creating a class for Car objects */
 
 class Car{
@@ -34,7 +34,7 @@ const displayError = (error)=>{
 /* copied displayTable function from Margit's code and added indexing row for the table. */
 const displayTable = ()=> {
     //const carData = JSON.parse(localStorage.getItem('cars'));
-    const car_keys  = Object.keys(localStorage);                 // get all keys at once using Object.keys
+    const car_keys  = Object.keys(localStorage);           // get all keys at once using Object.keys
     if(car_keys){
     const table = document.querySelector('.car-table');
     table.innerHTML = table.rows[0].innerHTML;
@@ -54,11 +54,7 @@ const displayTable = ()=> {
         deleteRow.textContent = "Delete";
         deleteRow.addEventListener("click", () => deleteData(carData));
         row.insertCell(-1).appendChild(deleteRow);
-        const showData = document.querySelector('.displayMsg');
-        showData.innerHTML = `<p> Car's Data successfully Added</p>`
-        setTimeout(() => {
-            showData.textContent = "";
-        }, 3000);
+        
     }); 
     }
 };
@@ -69,7 +65,7 @@ const deleteData = (carData)=>{
     if(carData){
         localStorage.removeItem(carData);
         const showData = document.querySelector('.displayMsg');
-        showData.innerHTML = `<p> Car's Data successfully deleted</p>`
+        showData.innerHTML = `License plate with ${carData} is deleted successfully`
         setTimeout(() => {
             showData.textContent = "";
         }, 3000);
@@ -111,10 +107,15 @@ form.addEventListener('submit', (event)=>{
         const car = new Car(carObject.plate, carObject.maker, carObject.model, carObject.owner, carObject.color, carObject.year, carObject.price, discount_price);
          
         form.reset()
-        //all_plate_num = localStorage.setItem("cars", car.plateNo)
         // added local storage step 3:
         localStorage.setItem(car.plateNo, JSON.stringify(car));             // add car license plate no. as a key.
+        const showData = document.querySelector('.displayMsg');
+        showData.innerHTML = `<p> Car's Data successfully Added</p>`
+        setTimeout(() => {
+            showData.textContent = "";
+        }, 3000);
         displayTable()
+
 
         } catch (error) {
         displayError(error);
