@@ -8,7 +8,7 @@
 /* https://unsplash.com/backgrounds for background image */
 
 body {
-    background: url('image/background.jpg') no-repeat;   
+    background: url('assets/image/background.jpg') no-repeat;   
     background-size: cover;
     /*background-color: blanchedalmond;*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
