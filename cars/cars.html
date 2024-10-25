@@ -9,19 +9,7 @@
 <body>
     <h1> About Cars</h1>
     <hr>
-    <main>
-      <div class="search-form">
-        <form id="searchCar">
-          <h2>Search</h2>
-          <label for="search">License</label>
-          <input type="text" id="search" />
-          <button type="submit">Search</button>
-        </form>
-      </div>
-      <div class="showData">
-        
-      </div>
-  
+    <main class="container">
       <div class="main-form">
         <h2> Insert car data </h2>
           <form id="car">
@@ -61,8 +49,19 @@
           </form>
           
       </div>
-
-        <aside class="aside">
+      <div class="search-form">
+        <form id="searchCar">
+          <h2>Search</h2>
+          <label for="search">License</label>
+          <input type="text" id="search" />
+          <button type="submit">Search</button>
+        </form>
+        <div class="showData">
+        
+        </div>
+      </div>
+      <div class="aside">
+        <aside>
           <h2>Car's Database</h2>
           <div class="car-data">
             <table class="car-table">
@@ -79,15 +78,12 @@
                 <th></th>
               </tr>      
             </table>
-
-
             </div>
-          </div>
-        </aside>
-       
+         </aside>
+      </div>
     </main>
 
-    <script src="main.js"></script>
+  <script src="main.js"></script>
     
 </body>
 </html>

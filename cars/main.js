@@ -19,7 +19,6 @@ class Car{
     }
 }
 
-
 const displayError = (error)=>{   
     const showData = document.querySelector('.showData');
     showData.textContent = `${error.message}`;
@@ -28,19 +27,14 @@ const displayError = (error)=>{
     }, 3000);
 };
 
-
-
-/* copied displayTable function from Margit's code and added indexing row for the table. */
 const displayTable = ()=> {
-    //const carData = JSON.parse(localStorage.getItem('cars'));
-    const car_keys  = Object.keys(localStorage);           // get all keys at once using Object.keys
+    const car_keys  = Object.keys(localStorage);   // get all keys at once using Object.keys
     if(car_keys){
     const table = document.querySelector('.car-table');
     table.innerHTML = table.rows[0].innerHTML;
     let carIndex = 0;
     car_keys.forEach((carData) => {
         const cars = JSON.parse(localStorage.getItem(carData));
-        //console.log(cars); 
         if(typeof(cars)=== 'object' && cars != null && 'plateNo' in cars){
 
             const row = table.insertRow(-1);
@@ -62,7 +56,7 @@ const displayTable = ()=> {
     }
 };
 
-displayTable();                         // refreshing table data
+displayTable();                         // displaying table data
 
 const deleteData = (carData)=>{
     if(carData){
@@ -79,15 +73,15 @@ const deleteData = (carData)=>{
 
 form.addEventListener('submit', (event)=>{
     event.preventDefault();
-    
     const carData = new FormData(event.target);
-    const carObject = Object.fromEntries(carData.entries());  /* we can fetch values individually with select id.*/
-    const currentYear = new Date().getFullYear();                               // copied
+     /* we can fetch values individually with select id.*/
+    const carObject = Object.fromEntries(carData.entries());  
+   
+    const currentYear = new Date().getFullYear();                   
     let discount_price = 0;
 
         // form validation...
     try {
-       // console.log(carObject); 
        
         if(!carObject.plate || !carObject.maker || !carObject.model|| !carObject.owner|| isNaN(carObject.price) || !carObject.color || isNaN(carObject.year)){
             throw new Error("All fields are required and must be valid.");
@@ -111,7 +105,7 @@ form.addEventListener('submit', (event)=>{
         if (plateFoundAlready)
             {
                 const showData = document.querySelector('.showData');
-                showData.innerHTML = "Car's plate number already exist"
+                showData.innerHTML = `Plate number with ${carObject.plate} already exist`
                 setTimeout(() => {
                     showData.textContent = "";
                 }, 3000);
@@ -121,7 +115,8 @@ form.addEventListener('submit', (event)=>{
          
             form.reset()
             // added local storage step 3:
-            localStorage.setItem(car.plateNo, JSON.stringify(car));             // add car license plate no. as a key.
+            localStorage.setItem(car.plateNo, JSON.stringify(car));             
+            // add car license plate no. as a key.
             const showData = document.querySelector('.showData');
             showData.innerHTML = `<p> Car's data added successfully </p>`
             setTimeout(() => {
@@ -145,13 +140,13 @@ searchCar.addEventListener('submit', (e)=>{
             const resultCar = JSON.parse(localStorage.getItem(findCar)) 
             if(resultCar){  
                 const showData = document.querySelector('.showData');
-                showData.innerHTML = `<p>License: ${resultCar.plateNo}</p>
-                                    <p> Maker: ${resultCar.carMaker}</p>
-                                    <p>Model: ${resultCar.carModel}</p>
-                                    <p>Owner: ${resultCar.carOwner}</p>
-                                    <p>Color: ${resultCar.carColor}</p>
-                                    <p>Price: ${resultCar.carPrice}</p>
-                                    <p>Discount: ${resultCar.discount_price}</p>`;
+                showData.innerHTML = `<p><b>License:</b>&nbsp;${resultCar.plateNo}</p>
+                                    <p><b> Maker:</b>&nbsp;${resultCar.carMaker}</p>
+                                    <p><b>Model: </b>&nbsp;${resultCar.carModel}</p>
+                                    <p><b>Owner:</b>&nbsp;${resultCar.carOwner}</p>
+                                    <p><b>Color:</b>&nbsp;${resultCar.carColor}</p>
+                                    <p><b>Price:</b>&nbsp;${resultCar.carPrice}</p>
+                                    <p><b>Discount:</b>&nbsp;${resultCar.discount_price}</p>`;
             }   
             else {
                 throw new Error(`The License plate with ${findCar} has not found.`);  
@@ -163,6 +158,5 @@ searchCar.addEventListener('submit', (e)=>{
     } catch(error) {
         displayError(error);
     } 
-       //  from local Storage data
 
 });
