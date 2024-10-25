@@ -117,7 +117,7 @@ function orderDetails(){
   try {
     const customerName = document.querySelector('#userName').value;
     if(!customerName){  
-      throw new Error("Name should be provided with other's order details");  
+      throw new Error("Name should be provided with other order details");  
     }
     const newOrder = new Order(
       pancake.selectedOptions[0].innerText,
