@@ -21,7 +21,7 @@ class Car{
 
 
 const displayError = (error)=>{   
-    const showData = document.querySelector('.displayMsg');
+    const showData = document.querySelector('.showData');
     showData.textContent = `${error.message}`;
     setTimeout(() => {
         showData.textContent = "";
@@ -67,7 +67,7 @@ displayTable();                         // refreshing table data
 const deleteData = (carData)=>{
     if(carData){
         localStorage.removeItem(carData);
-        const showData = document.querySelector('.displayMsg');
+        const showData = document.querySelector('.showData');
         showData.innerHTML = `License plate with ${carData} is deleted successfully`
         setTimeout(() => {
             showData.textContent = "";
@@ -110,7 +110,7 @@ form.addEventListener('submit', (event)=>{
        const  plateFoundAlready = localStorage.getItem(carObject.plate)
         if (plateFoundAlready)
             {
-                const showData = document.querySelector('.displayMsg');
+                const showData = document.querySelector('.showData');
                 showData.innerHTML = "Car's plate number already exist"
                 setTimeout(() => {
                     showData.textContent = "";
@@ -122,7 +122,7 @@ form.addEventListener('submit', (event)=>{
             form.reset()
             // added local storage step 3:
             localStorage.setItem(car.plateNo, JSON.stringify(car));             // add car license plate no. as a key.
-            const showData = document.querySelector('.displayMsg');
+            const showData = document.querySelector('.showData');
             showData.innerHTML = `<p> Car's data added successfully </p>`
             setTimeout(() => {
                 showData.textContent = "";
@@ -144,7 +144,7 @@ searchCar.addEventListener('submit', (e)=>{
         if(findCar){
             const resultCar = JSON.parse(localStorage.getItem(findCar)) 
             if(resultCar){  
-                const showData = document.querySelector('.displayMsg');
+                const showData = document.querySelector('.showData');
                 showData.innerHTML = `<p>License: ${resultCar.plateNo}</p>
                                     <p> Maker: ${resultCar.carMaker}</p>
                                     <p>Model: ${resultCar.carModel}</p>

@@ -1,4 +1,5 @@
 * {
+  background-color: rgb(208, 240, 240);
   color: rgba(88, 20, 20, 0.874);
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0;
@@ -50,12 +51,6 @@ aside {
   grid-row: 3/ span 6;
 }
 
-.showData {
-  position: absolute;
-  grid-row: 1 / span 3;
-  grid-column: 4/ span 5;
-}
-
 input {
   width: 160px;
   height: 20px;
@@ -97,14 +92,17 @@ button {
   margin: 5px;
 }
 
-.displayMsg {
-  font-size: 20px;
+.showData {
+  position: absolute;
+  grid-row: 1 / span 3;
+  grid-column: 4/ span 5;
+  font-size: 18px;
   color: red;
   box-sizing: border-box;
   
 }
 
 
-.displayMsg p {
+.showData p {
   color: green;
 }
