@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shital Sapkota Portfolio">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="shortcut icon" href="assets/image/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Shital Sapkota</title>
+</head>
+<body>
+    <header> 
+        <div class="logo">
+            <a href="/"><img src="assets/image/Shital.png" style="height: 100px; width: 100px;" alt="logo"></a>
+        </div>
+        <nav id="nav">
+          <div class="mobile"><a href="javascript:void(0);" onclick="toggleMenu()"><i class="fa-solid fa-bars fa-2xl" style="color: #611089;"></i></a></div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- For home page -->
+        <section id = "hero">
+            <h2 class="hero-title">Welcome to my Portfolio</h2>
+        </section>
+        <!-- For Experience page -->
+        <section id="about">
+            <h2 class="about-title">About</h2>
+            <blockquote>
+                <h3>There is always something to tell about a person.</h3>
+            </blockquote>
+            <div class="aboutMe">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam minima facere facilis unde incidunt modi eveniet quas ea, voluptates, rerum saepe nam recusandae velit impedit natus debitis ipsum mollitia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolore suscipit dolorum est molestias, mollitia nostrum laborum voluptatem eos asperiores eveniet quisquam enim non, laboriosam cum praesentium aliquid architecto nihil. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, tempora asperiores! Voluptates commodi impedit at nihil vitae quam provident doloremque, iste perspiciatis? Eveniet quisquam esse facilis, sequi voluptates quos ab. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur mollitia aliquam architecto adipisci in suscipit optio nulla eveniet, a ullam totam voluptas quas numquam? Magnam molestias deleniti tenetur accusamus rerum. </p>
+            </div>
+            
+        </section>
+
+        <!-- For Skills -->
+        <section id="skills">
+            <h2 class="skills-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <div class="skill-name">HTML</div>
+                    <div class="progress-bar">
+                        <div class="progress html"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">CSS</div>
+                    <div class="progress-bar">
+                        <div class="progress css"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">JavaScript</div>
+                    <div class="progress-bar">
+                        <div class="progress js"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">React</div>
+                    <div class="progress-bar">
+                        <div class="progress react"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">UI/UX Design</div>
+                    <div class="progress-bar">
+                        <div class="progress ui"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- For Project Page -->
+        <section id="project">
+            <h2 class="projects-title">Projects</h2>
+            <div class="project-cards">
+                
+                <!-- Card 1 -->
+                <div class="project-card">
+                    <img src="assets/image/pancake.jpg" alt="Project 1" class="project-image" />
+                    <h3 class="project-title">Pancake Maker</h3>
+                    <p class="project-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    <a href="https://shitalsapkota.github.io/pancake/index.html" target="_blank" class="read-more">Read More</a>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="project-card">
+                    <img src="assets/image/car.jpg" alt="Project 2" class="project-image" />
+                    <h3 class="project-title">Car's Database</h3>
+                    <p class="project-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="https://shitalsapkota.github.io/cars/cars.html" target="_blank" class="read-more">Read More</a>
+                </div>
+                <!-- Card 3 -->
+                <div class="project-card">
+                    <img src="assets/gallery_images/pic1.jpeg" alt="Project 2" class="project-image" />
+                    <h3 class="project-title">User's profile</h3>
+                    <p class="project-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                    <a href="https://shitalsapkota.github.io/persons/index.html" target="_blank" class="read-more">Read More</a>
+                </div>
+              
+            </div>
+            </div>
+
+        </section>
+
+        <!-- For Contact Page -->
+        <section id="contact">
+            <h2 class="contact-title">Contact</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </div>
+            </form>
+
+        </section>
+
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="logo">
+                <img src="assets/image/Shital.png" style="height: 100px; width: 100px;" alt="logo">
+            </div>
+            <div class="copyright"><p>Copyright &copy;Shital Sapkota</p></div>
+            <div class="social_media">
+                <div>
+                    <a href="" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+                <div>
+                    <a href="" class="linkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div> 
+                <div>
+                    <a href="" class="github"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div>
+                    <a href="" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>  
+            </div>
+        </div>
+        <button id="backTop"><img src="assets/image/backTop.png" alt=""></button>
+    </footer>
+    
+    <script src="main.js" ></script>
+    
+</body>
+</html>
